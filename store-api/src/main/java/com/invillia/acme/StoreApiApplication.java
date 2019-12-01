@@ -4,9 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class InvilliaApplication {
+public class StoreApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InvilliaApplication.class, args);
+		SpringApplication.run(StoreApiApplication.class, args);
 	}
+
 }
