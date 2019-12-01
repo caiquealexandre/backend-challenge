@@ -26,6 +26,7 @@
 
 	<modules>
 		<module>store-api</module>
+		<module>order-api</module>
 	</modules>
 
 
