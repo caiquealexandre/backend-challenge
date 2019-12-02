@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.invillia.acme</groupId>
-	<artifactId>order-api</artifactId>
+	<artifactId>payment-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>order-api</name>
+	<name>payment-api</name>
 	<description>ACME - Order API</description>
 
 	<parent>

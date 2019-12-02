@@ -1,5 +1,6 @@
 package com.invillia.acme.controller;
 
+import com.invillia.acme.dto.CreateStoreDTO;
 import com.invillia.acme.dto.StoreDTO;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -12,12 +13,12 @@ import javax.validation.Valid;
 
 public interface StoreController {
 
-    public ResponseEntity<?> create(@RequestBody @Valid StoreDTO storeDTO, HttpServletResponse response);
+    public ResponseEntity<?> create(@RequestBody @Valid CreateStoreDTO createStoreDTO, HttpServletResponse response);
 
     public ResponseEntity<?> getStoreById(@PathVariable Long id);
 
-    public ResponseEntity<?> getStoreByParameters(StoreDTO storeDTO, @PageableDefault(size = 15, page = 0) Pageable pageable);
+    public ResponseEntity<?> getStoreByParameters(StoreDTO storeDTO);
 
-    public ResponseEntity<?> update(@RequestBody @Valid StoreDTO storeDTO, @PathVariable Long id, HttpServletResponse response);
+    public ResponseEntity<?> update(@RequestBody @Valid CreateStoreDTO createStoreDTO, @PathVariable Long id, HttpServletResponse response);
 
 }

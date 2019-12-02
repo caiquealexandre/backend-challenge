@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,11 +32,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Page<Order> findPaginated(OrderDTO orderDTO, Pageable pageable) {
-        Sort sort = Sort.by(DATE_ATRIBUTE_ORDER).ascending();
-        pageable.getSortOr(sort);
+    public List<Order> findPaginated(OrderDTO orderDTO) {;
         return repository.findByParameters(orderDTO.getOrderStatus(), orderDTO.getStreet(), orderDTO.getZipCode(),
-                                           orderDTO.getCity(), orderDTO.getState(), orderDTO.getIdStore(), pageable);
+                                           orderDTO.getCity(), orderDTO.getState(), orderDTO.getIdStore());
     }
 
 }

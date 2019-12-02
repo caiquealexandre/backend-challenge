@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 
 public interface StoreRepository extends JpaRepository<Store, Long> {
 
@@ -16,7 +18,7 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
             + " AND ( s.zipCode = :zipCode OR :zipCode IS NULL ) "
             + " AND ( s.city = :city OR :city IS NULL ) "
             + " AND ( s.state = :state OR :state IS NULL ) ")
-    Page<Store> findByParameters(@Param("name") String name, @Param("street") String street, @Param("city") String city,
-                                 @Param("zipCode") String zipCode, @Param("state") String state, Pageable page);
+    List<Store> findByParameters(@Param("name") String name, @Param("street") String street, @Param("city") String city,
+                                 @Param("zipCode") String zipCode, @Param("state") String state);
 
 }

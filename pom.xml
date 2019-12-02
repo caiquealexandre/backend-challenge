@@ -6,17 +6,10 @@
 	<groupId>com.invillia.acme</groupId>
 	<artifactId>invillia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 
 	<name>invillia</name>
 	<description>Demo project for Spring Boot</description>
-
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,6 +20,7 @@
 	<modules>
 		<module>store-api</module>
 		<module>order-api</module>
+		<module>payment-api</module>
 	</modules>
 
 

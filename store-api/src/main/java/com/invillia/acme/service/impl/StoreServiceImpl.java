@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -31,10 +32,8 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
-    public Page<Store> findPaginated(StoreDTO storeDTO, Pageable pageable) {
-        Sort sort = Sort.by(NAME_ATRIBUTE_ORDER).ascending();
-        pageable.getSortOr(sort);
-        return repository.findByParameters(storeDTO.getName(), storeDTO.getStreet(), storeDTO.getCity(), storeDTO.getZipCode(), storeDTO.getState(), pageable);
+    public List<Store> findPaginated(StoreDTO storeDTO) {
+        return repository.findByParameters(storeDTO.getName(), storeDTO.getStreet(), storeDTO.getCity(), storeDTO.getZipCode(), storeDTO.getState());
     }
 
 

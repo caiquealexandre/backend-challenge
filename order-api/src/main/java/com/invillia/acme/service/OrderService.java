@@ -5,6 +5,7 @@ import com.invillia.acme.entity.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface OrderService {
@@ -13,5 +14,5 @@ public interface OrderService {
 
     public Optional<Order> findById(Long id);
 
-    public Page<Order> findPaginated(OrderDTO orderDTO, Pageable pageable);
+    public List<Order> findPaginated(OrderDTO orderDTO);
 }

@@ -4,7 +4,9 @@ import com.invillia.acme.dto.StoreDTO;
 import com.invillia.acme.entity.Store;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface StoreService {
@@ -13,6 +15,6 @@ public interface StoreService {
 
     public Optional<Store> findById(Long id);
 
-    public Page<Store> findPaginated(StoreDTO storeDTO, Pageable pageable);
+    public List<Store> findPaginated(StoreDTO storeDTO);
 
 }
