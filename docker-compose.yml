@@ -1,0 +1,40 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12.1
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres 
+    ports:
+      - "5432:5432"
+           
+  store-api:
+    build:
+      context: ./store-api
+      dockerfile: Dockerfile
+    image: image-store-api
+    depends_on:
+      - postgres
+    ports:
+      - 8080:8080
+ 
+  order-api:
+    build:
+      context: ./order-api
+      dockerfile: Dockerfile
+    image: image-order-api
+    depends_on:
+      - postgres
+    ports:
+      - 8081:8080
+
+  payment-api:
+    build:
+      context: ./payment-api
+      dockerfile: Dockerfile 
+    image: image-payment-api
+    depends_on:
+      - postgres
+    ports:
+      - 8082:8080
