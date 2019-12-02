@@ -1,3 +1,30 @@
+## Considerações:
+* O projeto foi separado em 3 módulos (store-api, order-api e payment-api). Também foi criado um database para cada serviço.
+O mesmo foi separado para que atenda os princípios de microserviços e sejam independentes.
+* Banco de dados: O banco utilizado no projeto foi o PostgreSQL com o Flyway para gerenciar versões do banco.
+* Docker: O projeto foi configurado para ser executado em um ambiente de containers.
+* AWS: Pelo pouco tempo, não consegui fazer o uso da AWS no projeto.
+* Swagger: foi implementado, para acessar, segue os links abaixo:
+  - Store API Rest: http://localhost:8080/swagger-ui.html
+  - Order API Rest: http://localhost:8081/swagger-ui.html
+  - Payment API Rest: http://localhost:8082/swagger-ui.html
+  
+
+## Melhorias a serem realizadas:
+* Implementar testes;
+* Implantar a aplicação juntamente com o banco de dados na AWS;
+* Criação do RabbitMQ ou ActiveMQ, para que os pedidos e pagamentos fossem enviados para uma fila e criação de um serviço multi-thread para processar essas informações, possibilitando escalar o processamento de pedidos e pagamentos de acordo com a demanda e implementação de métodos assíncronos.
+* Criação de um Load Balancer para auxiliar na escalabilidade da aplicação quando necessário;
+* Implementar segurança da API utlizando OAuth2.
+
+## Instruções para execução do projeto Backend-Challange:
+1 - Para execução do projeto, será necessário que tenha o docker instalado em sua máquina.
+
+2 - DATABASE: O banco de dados utilizado no projeto foi o PostgreSQL. Utilize o comando abaixo para instalar o banco PostgreSQL através do docker:
+
+`docker-compose up`
+
+
 # Invillia recruitment challenge
 
 [![Build Status](https://travis-ci.org/shelsonjava/invillia.svg?branch=master)](https://travis-ci.org/shelsonjava/invillia)
@@ -51,3 +78,6 @@ scalability.
 * Security
 * Swagger
 * Clean Code
+
+
+
